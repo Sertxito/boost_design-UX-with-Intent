@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "project": "[Nombre del proyecto]",
+    "generatedBy": "@design-system-architect",
+    "lastUpdated": "[YYYY-MM-DD]"
+  },
+  "typefaces": {
+    "heading": {
+      "family": "Inter",
+      "weight": "bold",
+      "sizes": ["32px", "28px", "24px", "20px"]
+    },
+    "body": {
+      "family": "Inter",
+      "weight": "regular",
+      "sizes": ["16px", "14px"]
+    },
+    "caption": {
+      "family": "Inter",
+      "weight": "regular",
+      "size": "12px"
+    }
+  }
+}

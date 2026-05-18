@@ -1,0 +1,328 @@
+// design-tokens.scss
+// Design token system for consistent styling across your project
+
+// ============================================================================
+// COLOR TOKENS
+// ============================================================================
+
+$colors: (
+  // Primary palette
+  'primary': #0066cc,
+  'primary-light': #3399ff,
+  'primary-dark': #004499,
+
+  // Secondary palette
+  'secondary': #f0f0f0,
+  'secondary-light': #f9f9f9,
+  'secondary-dark': #e0e0e0,
+
+  // Status colors
+  'success': #28a745,
+  'warning': #ffc107,
+  'danger': #dc3545,
+  'info': #17a2b8,
+
+  // Neutral palette
+  'gray-50': #f9fafb,
+  'gray-100': #f3f4f6,
+  'gray-200': #e5e7eb,
+  'gray-300': #d1d5db,
+  'gray-400': #9ca3af,
+  'gray-500': #6b7280,
+  'gray-600': #4b5563,
+  'gray-700': #374151,
+  'gray-800': #1f2937,
+  'gray-900': #111827,
+
+  // Text colors
+  'text-primary': #000000,
+  'text-secondary': #666666,
+  'text-disabled': #cccccc,
+  'text-on-primary': #ffffff,
+  'text-on-secondary': #000000,
+);
+
+@function color($name, $opacity: null) {
+  $color: map-get($colors, $name);
+
+  @if $color == null {
+    @error "Color '#{$name}' not found in $colors map";
+  }
+
+  @if $opacity != null {
+    @return rgba($color, $opacity);
+  }
+
+  @return $color;
+}
+
+// ============================================================================
+// SPACING TOKENS (8px grid system)
+// ============================================================================
+
+$spacing-unit: 8px;
+
+$spacing: (
+  'xs': $spacing-unit * 0.5,    // 4px
+  'sm': $spacing-unit,           // 8px
+  'md': $spacing-unit * 2,       // 16px
+  'lg': $spacing-unit * 3,       // 24px
+  'xl': $spacing-unit * 4,       // 32px
+  'xxl': $spacing-unit * 6,      // 48px
+  'xxxl': $spacing-unit * 8,     // 64px
+);
+
+@function spacing($size) {
+  $space: map-get($spacing, $size);
+
+  @if $space == null {
+    @error "Spacing '#{$size}' not found in $spacing map";
+  }
+
+  @return $space;
+}
+
+// ============================================================================
+// TYPOGRAPHY TOKENS
+// ============================================================================
+
+$font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+$font-family-mono: 'Courier New', Courier, monospace;
+
+$font-weights: (
+  'light': 300,
+  'normal': 400,
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700,
+);
+
+@function font-weight($name) {
+  @return map-get($font-weights, $name);
+}
+
+$typography: (
+  'xs': (
+    'size': 12px,
+    'weight': font-weight('normal'),
+    'line-height': 1.4,
+    'letter-spacing': 0.5px,
+  ),
+  'sm': (
+    'size': 14px,
+    'weight': font-weight('normal'),
+    'line-height': 1.5,
+    'letter-spacing': 0.25px,
+  ),
+  'base': (
+    'size': 16px,
+    'weight': font-weight('normal'),
+    'line-height': 1.5,
+    'letter-spacing': 0,
+  ),
+  'lg': (
+    'size': 18px,
+    'weight': font-weight('medium'),
+    'line-height': 1.6,
+    'letter-spacing': 0,
+  ),
+  'xl': (
+    'size': 20px,
+    'weight': font-weight('semibold'),
+    'line-height': 1.6,
+    'letter-spacing': 0,
+  ),
+  'heading-sm': (
+    'size': 24px,
+    'weight': font-weight('bold'),
+    'line-height': 1.4,
+  ),
+  'heading-md': (
+    'size': 32px,
+    'weight': font-weight('bold'),
+    'line-height': 1.3,
+  ),
+  'heading-lg': (
+    'size': 40px,
+    'weight': font-weight('bold'),
+    'line-height': 1.2,
+  ),
+);
+
+@mixin typography($level) {
+  $config: map-get($typography, $level);
+
+  @if $config == null {
+    @error "Typography level '#{$level}' not found in $typography map";
+  }
+
+  font-size: map-get($config, 'size');
+  font-weight: map-get($config, 'weight');
+  line-height: map-get($config, 'line-height');
+
+  @if map-has-key($config, 'letter-spacing') {
+    letter-spacing: map-get($config, 'letter-spacing');
+  }
+}
+
+// ============================================================================
+// SHADOW/ELEVATION TOKENS
+// ============================================================================
+
+$shadows: (
+  'none': none,
+  'sm': 0 1px 2px 0 rgba(0, 0, 0, 0.05),
+  'md': 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  'lg': 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  'xl': 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  'xxl': 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+);
+
+@function shadow($level) {
+  $shadow: map-get($shadows, $level);
+
+  @if $shadow == null {
+    @error "Shadow level '#{$level}' not found in $shadows map";
+  }
+
+  @return $shadow;
+}
+
+// ============================================================================
+// BORDER RADIUS TOKENS
+// ============================================================================
+
+$border-radius: (
+  'none': 0,
+  'sm': 2px,
+  'md': 4px,
+  'lg': 8px,
+  'xl': 12px,
+  'full': 9999px,
+);
+
+@function radius($size) {
+  $r: map-get($border-radius, $size);
+
+  @if $r == null {
+    @error "Border radius '#{$size}' not found in $border-radius map";
+  }
+
+  @return $r;
+}
+
+// ============================================================================
+// TRANSITION TOKENS
+// ============================================================================
+
+$transitions: (
+  'fast': 100ms,
+  'base': 200ms,
+  'slow': 300ms,
+);
+
+@function transition($speed) {
+  $t: map-get($transitions, $speed);
+
+  @if $t == null {
+    @error "Transition speed '#{$speed}' not found in $transitions map";
+  }
+
+  @return $t;
+}
+
+@mixin transition($properties: all, $speed: base, $timing: ease) {
+  $duration: transition($speed);
+  transition: $properties $duration $timing;
+}
+
+// ============================================================================
+// Z-INDEX SCALE
+// ============================================================================
+
+$z-index: (
+  'hide': -1,
+  'base': 0,
+  'dropdown': 100,
+  'sticky': 200,
+  'fixed': 300,
+  'modal-backdrop': 400,
+  'modal': 500,
+  'popover': 600,
+  'tooltip': 700,
+  'notification': 800,
+);
+
+@function z-index($layer) {
+  $z: map-get($z-index, $layer);
+
+  @if $z == null {
+    @error "Z-index layer '#{$layer}' not found in $z-index map";
+  }
+
+  @return $z;
+}
+
+// ============================================================================
+// BREAKPOINTS
+// ============================================================================
+
+$breakpoints: (
+  'xs': 320px,
+  'sm': 640px,
+  'md': 1024px,
+  'lg': 1280px,
+  'xl': 1536px,
+);
+
+@mixin media($size) {
+  $bp: map-get($breakpoints, $size);
+
+  @if $bp == null {
+    @error "Breakpoint '#{$size}' not found in $breakpoints map";
+  }
+
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+// ============================================================================
+// USAGE EXAMPLES
+// ============================================================================
+
+/*
+
+// Colors
+$primary: color('primary');
+$danger: color('danger');
+$text: color('text-primary');
+$text-muted: color('text-secondary', 0.7);
+
+// Spacing
+$padding: spacing('md'); // 16px
+$gap: spacing('lg');     // 24px
+$margin: spacing('sm');  // 8px
+
+// Typography
+@include typography('heading-md');
+@include typography('base');
+
+// Shadows
+box-shadow: shadow('lg');
+
+// Radius
+border-radius: radius('md');
+
+// Transitions
+@include transition(all, base, ease-in-out);
+
+// Z-index
+z-index: z-index('modal');
+
+// Media queries
+@include media('md') {
+  font-size: 18px;
+}
+
+*/

@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "project": "[Nombre del proyecto]",
+    "generatedBy": "@component-inventory-mapper",
+    "lastUpdated": "[YYYY-MM-DD]"
+  },
+  "patterns": [
+    {
+      "name": "Button",
+      "variants": ["primary", "secondary", "danger"]
+    },
+    {
+      "name": "Input",
+      "variants": ["text", "email", "password"]
+    },
+    {
+      "name": "Card",
+      "variants": ["default"]
+    },
+    {
+      "name": "Badge",
+      "variants": ["default"]
+    },
+    {
+      "name": "Alert",
+      "variants": ["info", "success", "warning", "error"]
+    }
+  ]
+}
