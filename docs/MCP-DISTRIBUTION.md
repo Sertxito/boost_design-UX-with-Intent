@@ -62,7 +62,9 @@ En nuestro caso:
 │   │
 │   ├── Workflows.md                ← Comandos rápidos per-task
 │   ├── References.md               ← Enlaces a estándares
-│   ├── SESSION-GUIDE.md            ← Guía de sesión de 30 min
+│   └── SESSION-GUIDE.md            ← Guía de sesión de 30 min
+│
+├── demo/
 │   └── DEMO-TECHRIDERS.md          ← Caso real paso a paso
 │
 └── .github/workflows/              ← (Futuro) CI/CD
@@ -422,7 +424,7 @@ https://github.com/Sertxito/BoostDesign---UX-with-Intent
 📖 **Docs:**
 - Readme.md: Visión general
 - docs/SESSION-GUIDE.md: Cómo funcionó el proyecto (30 min)
-- docs/DEMO-TECHRIDERS.md: Caso real paso a paso
+- demo/DEMO-TECHRIDERS.md: Caso real paso a paso
 - docs/Workflows.md: Tareas rápidas
 
 ❓ **Preguntas?**
