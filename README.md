@@ -1,6 +1,6 @@
 # BoostDesign - Kit Experto de UX/UI para GitHub Copilot
 
-**BoostDesign** es un sistema profesional de UX/UI que amplifica GitHub Copilot con **4 agentes**, **3 instrucciones contextuales** y **11 skills especializados**.
+**BoostDesign** es un sistema profesional de UX/UI que amplifica GitHub Copilot con **4 agentes**, **3 instrucciones contextuales** y **13 skills especializados**.
 
 Todo respaldado por estándares **W3C**, **WCAG**, **Material Design 3** y mejores prácticas de la industria.
 
@@ -70,7 +70,7 @@ Se aplican **automáticamente** mientras programas:
 
 ---
 
-## 🛠️ Los 11 Skills
+## 🛠️ Los 13 Skills
 
 **Design System:**
 - `figma-integration` - Sincronización con Figma
@@ -90,6 +90,10 @@ Se aplican **automáticamente** mientras programas:
 - `react-component-styling` - Estilado en React (CSS Modules, Styled Components, Emotion, Tailwind)
 - `vue-component-styling` - Estilado en Vue (Scoped, CSS Modules, Tailwind, UnoCSS)
 - `css-scss-best-practices` - Fundamentos y arquitectura de CSS/SCSS
+
+**Integración con Backlog:**
+- `devops-connector` - Conecta con Azure DevOps/Jira, autentica y extrae tareas/historias de usuario
+- `functional-to-ux-spec` - Transforma tareas funcionales en especificaciones UX/UI BoostDesign
 
 ---
 
@@ -145,6 +149,14 @@ Se aplican **automáticamente** mientras programas:
 
 # Mostrar patrón accesible
 @ux-ui-expert muéstrame un botón accesible con patrones WCAG
+
+# Desde Azure DevOps: leer tarea y generar spec UX
+@devops-connector busca tareas UX en el sprint actual
+@functional-to-ux-spec interpreta tarea #12345
+
+# Sin DevOps: copy-paste de requerimiento funcional
+@functional-to-ux-spec interpreta este requerimiento:
+"Como cliente quiero ver mis pagos recurrentes..."
 
 # Estilado React
 Muéstrame cómo estilizar un botón React con CSS Modules

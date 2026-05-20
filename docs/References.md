@@ -199,7 +199,40 @@ Todas las recomendaciones de BoostDesign están respaldadas por estándares ofic
 
 ---
 
-## 📊 Herramientas de Diseño
+## � Integración con Backlog (DevOps / Jira)
+
+### Azure DevOps
+
+**Docs Oficiales**: <https://learn.microsoft.com/en-us/azure/devops/>  
+**REST API**: <https://learn.microsoft.com/en-us/rest/api/azure/devops/>  
+**Personal Access Tokens**: <https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate>
+
+**Skill BoostDesign:** `devops-connector`
+- Autenticación segura con PAT (mínimo privilegio: `Work Items - Read`)
+- Búsqueda de tareas por sprint, área, estado, responsable
+- Extracción de título, descripción y criterios de aceptación
+- Encadenamiento automático con `functional-to-ux-spec`
+
+### Jira
+
+**Docs Oficiales**: <https://www.atlassian.com/software/jira>  
+**REST API v3**: <https://developer.atlassian.com/cloud/jira/platform/rest/v3/>  
+**Autenticación**: <https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/>
+
+**Skill BoostDesign:** `devops-connector` (mismo skill, multi-sistema)
+
+### Functional-to-UX Spec
+
+**Skill BoostDesign:** `functional-to-ux-spec`  
+**Plantilla de salida:** `.github/skills/functional-to-ux-spec/references/ux-spec-template.md`
+
+- Transforma cualquier historia de usuario o tarea funcional en spec UX completa
+- Compatible con input de DevOps Connector o copy-paste directo
+- Formato de salida estandarizado (secciones A→I: intención, flujo, wireframe, microcopy, estados, accesibilidad, criterios, métrica)
+
+---
+
+## �📊 Herramientas de Diseño
 
 ### Figma
 

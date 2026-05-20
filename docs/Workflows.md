@@ -70,3 +70,32 @@ Usa el skill aria-accessibility-patterns para auditar cumplimiento WCAG 2.1 AA
 ```
 
 Resultado: Reporte de cumplimiento, recomendaciones prioritarias.
+
+---
+
+## 🔗 DevOps → Spec UX (desde el backlog)
+
+### Con Azure DevOps o Jira (conexión directa)
+
+```
+@devops-connector busca tareas UX en el sprint actual
+```
+
+La skill solicita autenticación (PAT), lista tareas y devuelve el contenido. Después:
+
+```
+@functional-to-ux-spec interpreta tarea #12345
+```
+
+Resultado: Especificación UX completa (intención, flujo, wireframe, microcopy, estados, accesibilidad, criterios de aceptación).
+
+### Sin conexión (copy-paste)
+
+```
+@functional-to-ux-spec interpreta este requerimiento:
+"Como cliente quiero..."
+```
+
+Mismo resultado. La skill funciona igual con texto directo.
+
+**Plantilla de salida:** `.github/skills/functional-to-ux-spec/references/ux-spec-template.md`
