@@ -31,6 +31,12 @@ jobs:
       - name: Validate quality gates
         run: npm run quality
 
+      - name: Validate doctor gates
+        run: npm run doctor
+
+      - name: Validate 100 coverage gate
+        run: npm run coverage:gate
+
       - name: Run semantic release
         run: npm run release
         env:

@@ -15,6 +15,12 @@ const COPY_ITEMS = [
   "agents",
   "instructions",
   "skills",
+  "specs",
+  "templates",
+  "examples",
+  "evals",
+  "docs/architecture",
+  "docs/quality",
   "docs/design-tokens",
   "prompts"
 ];

@@ -1,0 +1,69 @@
+{
+  "generatedAt": "2026-08-07T12:12:22.038Z",
+  "threshold": 100,
+  "score": 100,
+  "passed": 12,
+  "total": 12,
+  "checks": [
+    {
+      "name": "agents >= 5 files",
+      "ok": true,
+      "details": "found 5"
+    },
+    {
+      "name": "instructions >= 3 files",
+      "ok": true,
+      "details": "found 3"
+    },
+    {
+      "name": "skills >= 13 files",
+      "ok": true,
+      "details": "found 29"
+    },
+    {
+      "name": "specs >= 3 files",
+      "ok": true,
+      "details": "found 3"
+    },
+    {
+      "name": "templates >= 5 files",
+      "ok": true,
+      "details": "found 5"
+    },
+    {
+      "name": "evals root >= 3 files",
+      "ok": true,
+      "details": "found 10 (including fixtures)"
+    },
+    {
+      "name": "examples >= 2 files",
+      "ok": true,
+      "details": "found 2"
+    },
+    {
+      "name": "prompts >= 4 files",
+      "ok": true,
+      "details": "found 4"
+    },
+    {
+      "name": "fixtures >= 6 files",
+      "ok": true,
+      "details": "found 6"
+    },
+    {
+      "name": "traceability matrix exists",
+      "ok": true,
+      "details": "required for cross-domain mapping"
+    },
+    {
+      "name": "agent interaction map exists",
+      "ok": true,
+      "details": "required for orchestration transparency"
+    },
+    {
+      "name": "traceability status fully covered",
+      "ok": true,
+      "details": "all capability rows must be marked Covered"
+    }
+  ]
+}

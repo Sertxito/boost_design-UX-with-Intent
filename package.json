@@ -32,6 +32,8 @@
   "scripts": {
     "init": "node scripts/init.mjs",
     "doctor": "node scripts/doctor.mjs",
+    "measure:coverage": "node scripts/measure-coverage.mjs",
+    "coverage:gate": "node scripts/measure-coverage.mjs --min 100",
     "validate:json": "node -e \"const fs=require('fs'); JSON.parse(fs.readFileSync('mcpee.json','utf8')); JSON.parse(fs.readFileSync('platform.json','utf8')); console.log('JSON metadata OK');\"",
     "quality": "npm run validate:json",
     "release": "semantic-release",

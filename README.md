@@ -48,6 +48,8 @@ Todo respaldado por estándares **W3C**, **WCAG**, **Material Design 3** y mejor
 npm install
 npm run quality
 npm run doctor
+npm run measure:coverage
+npm run coverage:gate
 ```
 
 ### Solución Rápida de Problemas

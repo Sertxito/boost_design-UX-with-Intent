@@ -18,8 +18,17 @@ jobs:
         with:
           node-version: 24
 
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund --legacy-peer-deps
+
       - name: Run quality checks
         run: npm run quality
+
+      - name: Run doctor checks
+        run: npm run doctor
+
+      - name: Run coverage gate
+        run: npm run coverage:gate
 
   lint:
     runs-on: ubuntu-latest
