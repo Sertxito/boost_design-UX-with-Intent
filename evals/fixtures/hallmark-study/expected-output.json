@@ -1,0 +1,10 @@
+{
+  "scenario": "hallmark-study",
+  "mustInclude": [
+    "macrostructure_summary",
+    "type_pairing_summary",
+    "color_anchor_summary",
+    "token_mapping",
+    "non_clone_statement"
+  ]
+}

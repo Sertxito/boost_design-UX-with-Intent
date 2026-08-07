@@ -1,0 +1,12 @@
+{
+  "scenario": "design-tokens-draft",
+  "mustFind": [
+    "missing_token_groups",
+    "non_semantic_token_names",
+    "light_dark_compatibility_gaps"
+  ],
+  "mustRecommend": [
+    "normalize_token_naming",
+    "complete_spacing_radius_shadow_scales"
+  ]
+}

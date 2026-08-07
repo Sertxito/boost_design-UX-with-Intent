@@ -1,0 +1,19 @@
+{
+  "scenario": "functional-story",
+  "mustIncludeSections": [
+    "A) Intencion",
+    "B) Flujo de Usuario",
+    "C) Arquitectura de Informacion",
+    "D) Wireframe Descriptivo",
+    "E) Microcopy",
+    "F) Estados",
+    "G) Accesibilidad",
+    "H) Criterios de Aceptacion UX",
+    "I) Metrica / Hipotesis"
+  ],
+  "mustInclude": [
+    "supuestos",
+    "ambiguedades",
+    "recovery_path"
+  ]
+}
