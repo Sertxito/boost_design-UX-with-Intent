@@ -31,6 +31,8 @@
   ],
   "scripts": {
     "init": "node scripts/init.mjs",
+    "postinstall": "node scripts/postinstall.mjs",
+    "install:hallmark": "node scripts/install-hallmark.mjs",
     "doctor": "node scripts/doctor.mjs",
     "measure:coverage": "node scripts/measure-coverage.mjs",
     "coverage:gate": "node scripts/measure-coverage.mjs --min 100",

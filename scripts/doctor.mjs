@@ -23,12 +23,12 @@ const REQUIRED_CORE_PATHS = [
 ];
 
 const COVERAGE_MINIMUMS = {
-  evals: 3,
-  specs: 3,
-  templates: 5,
-  examples: 2,
-  prompts: 4,
-  fixtures: 6
+  evals: 4,
+  specs: 4,
+  templates: 6,
+  examples: 3,
+  prompts: 6,
+  fixtures: 10
 };
 
 function abs(relPath) {
@@ -86,10 +86,12 @@ function run() {
 
   let platform;
   let mcpee;
+  let pkg;
   try {
     platform = readJson("platform.json");
     mcpee = readJson("mcpee.json");
-    addCheck("JSON manifests", true, "platform.json and mcpee.json are valid JSON.");
+    pkg = readJson("package.json");
+    addCheck("JSON manifests", true, "platform.json, mcpee.json and package.json are valid JSON.");
   } catch (error) {
     addCheck("JSON manifests", false, `Invalid JSON: ${error.message}`);
   }
@@ -137,6 +139,48 @@ function run() {
       missingCoreSkills.length === 0
         ? `All ${(mcpee.coreSkillSet || []).length} core skills resolve correctly.`
         : `Broken references: ${missingCoreSkills.join(", ")}`
+    );
+
+    const hallmarkEnabled = Boolean(mcpee.integrations?.hallmark?.enabled);
+    const hallmarkRequiredPaths = [
+      "skills/hallmark/SKILL.md",
+      "skills/hallmark/references/integration-playbook.md",
+      "specs/hallmark-bridge-spec.md",
+      "templates/hallmark-handoff.md",
+      "examples/hallmark-to-ux-flow.md",
+      "prompts/hallmark-study-bridge.prompt.md",
+      "prompts/hallmark-redesign-bridge.prompt.md",
+      "evals/hallmark-integration.eval.md",
+      "evals/fixtures/hallmark-redesign/input.md",
+      "evals/fixtures/hallmark-redesign/expected-output.json",
+      "evals/fixtures/hallmark-study/input.md",
+      "evals/fixtures/hallmark-study/expected-output.json"
+    ];
+    const missingHallmark = hallmarkRequiredPaths.filter((p) => !exists(p));
+    addCheck(
+      "Hallmark integration",
+      !hallmarkEnabled || missingHallmark.length === 0,
+      !hallmarkEnabled
+        ? "Hallmark integration disabled in mcpee.json."
+        : missingHallmark.length === 0
+        ? "Hallmark integration artifacts are present."
+        : `Missing Hallmark artifacts: ${missingHallmark.join(", ")}`
+    );
+
+    const hasAutoInstallWiring = Boolean(
+      pkg?.scripts?.postinstall === "node scripts/postinstall.mjs" &&
+      pkg?.scripts?.["install:hallmark"] === "node scripts/install-hallmark.mjs" &&
+      exists("scripts/postinstall.mjs") &&
+      exists("scripts/install-hallmark.mjs")
+    );
+    addCheck(
+      "Hallmark auto-install wiring",
+      !hallmarkEnabled || hasAutoInstallWiring,
+      !hallmarkEnabled
+        ? "Hallmark integration disabled in mcpee.json."
+        : hasAutoInstallWiring
+        ? "postinstall + install scripts for Hallmark are configured."
+        : "Missing Hallmark postinstall wiring in package.json/scripts."
     );
   }
 

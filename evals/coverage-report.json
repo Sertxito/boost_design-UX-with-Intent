@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T12:12:22.038Z",
+  "generatedAt": "2026-08-07T12:21:11.167Z",
   "threshold": 100,
   "score": 100,
   "passed": 12,
@@ -18,37 +18,37 @@
     {
       "name": "skills >= 13 files",
       "ok": true,
-      "details": "found 29"
+      "details": "found 31"
     },
     {
       "name": "specs >= 3 files",
       "ok": true,
-      "details": "found 3"
+      "details": "found 4"
     },
     {
       "name": "templates >= 5 files",
       "ok": true,
-      "details": "found 5"
+      "details": "found 6"
     },
     {
       "name": "evals root >= 3 files",
       "ok": true,
-      "details": "found 10 (including fixtures)"
+      "details": "found 15 (including fixtures)"
     },
     {
       "name": "examples >= 2 files",
       "ok": true,
-      "details": "found 2"
+      "details": "found 3"
     },
     {
       "name": "prompts >= 4 files",
       "ok": true,
-      "details": "found 4"
+      "details": "found 6"
     },
     {
       "name": "fixtures >= 6 files",
       "ok": true,
-      "details": "found 6"
+      "details": "found 10"
     },
     {
       "name": "traceability matrix exists",

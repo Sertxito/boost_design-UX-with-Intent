@@ -1,0 +1,13 @@
+{
+  "scenario": "hallmark-redesign",
+  "mustInclude": [
+    "visual_rationale",
+    "token_normalization",
+    "wcag_validation",
+    "consistency_risk_list"
+  ],
+  "mustNotBypass": [
+    "ux_governance",
+    "accessibility_checks"
+  ]
+}

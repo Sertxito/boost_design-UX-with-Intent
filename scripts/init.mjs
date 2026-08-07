@@ -3,12 +3,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { installHallmark } from "./install-hallmark.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const root = path.resolve(__dirname, "..");
 const target = process.cwd();
 const force = process.argv.includes("--force");
+const noHallmark = process.argv.includes("--no-hallmark");
 
 const COPY_ITEMS = [
   ".github/copilot-instructions.md",
@@ -67,6 +69,12 @@ for (const item of COPY_ITEMS) {
   }
 
   copyRecursive(src, dest);
+}
+
+if (!noHallmark) {
+  installHallmark({ source: "init" });
+} else {
+  console.log("[skip] Hallmark installation skipped (--no-hallmark)");
 }
 
 console.log("\nDone.");

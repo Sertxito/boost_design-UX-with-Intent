@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/mcpee-uxdesign.svg)](https://www.npmjs.com/package/mcpee-uxdesign)
 
-**BoostDesign** es un sistema profesional de UX/UI que amplifica GitHub Copilot con **4 agentes**, **3 instrucciones contextuales** y **13 skills especializados**.
+**BoostDesign** es un sistema profesional de UX/UI que amplifica GitHub Copilot con **4 agentes**, **3 instrucciones contextuales**, **13 skills core** y **1 complemento opcional de exploración visual (Hallmark Bridge)**.
 
 Todo respaldado por estándares **W3C**, **WCAG**, **Material Design 3** y mejores prácticas de la industria.
 
@@ -16,6 +16,8 @@ Todo respaldado por estándares **W3C**, **WCAG**, **Material Design 3** y mejor
    npm install mcpee-uxdesign
    ```
 
+   Esto intenta instalar automáticamente el complemento Hallmark.
+
 2. **Inicializa los artefactos en tu repo**:
 
    ```bash
@@ -26,6 +28,12 @@ Todo respaldado por estándares **W3C**, **WCAG**, **Material Design 3** y mejor
 
    ```bash
    npx mcpee-uxdesign-init --force
+   ```
+
+   Si quieres evitar instalación automática de Hallmark durante init:
+
+   ```bash
+   npx mcpee-uxdesign-init --no-hallmark
    ```
 
 3. **Abre VS Code** en tu proyecto.
@@ -129,6 +137,14 @@ Se aplican **automáticamente** mientras programas:
 **Integración con Backlog:**
 - `devops-connector` - Conecta con Azure DevOps/Jira, autentica y extrae tareas/historias de usuario
 - `functional-to-ux-spec` - Transforma tareas funcionales en especificaciones UX/UI BoostDesign
+
+## 🧩 Complemento Opcional
+
+- `hallmark` (bridge) - Integra generación/rediseño visual de Hallmark con validación UX de BoostDesign.
+- Instalación automática al instalar este paquete (postinstall) y durante `mcpee-uxdesign-init`.
+- Instalación manual del motor Hallmark: `npx skills add nutlope/hallmark`
+- Para omitir instalación automática global: define `MCPEE_SKIP_HALLMARK=1`.
+- Recomendado para: exploración visual de hero/landing antes de normalizar tokens y validar accesibilidad.
 
 ---
 

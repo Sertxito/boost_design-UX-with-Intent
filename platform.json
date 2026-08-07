@@ -126,6 +126,12 @@
       "name": "Vue Component Styling",
       "description": "Vue styling patterns with scoped CSS, CSS Modules, and Tailwind",
       "path": "skills/vue-component-styling/SKILL.md"
+    },
+    {
+      "id": "hallmark",
+      "name": "Hallmark Bridge",
+      "description": "Optional bridge for integrating Hallmark visual generation with BoostDesign UX governance",
+      "path": "skills/hallmark/SKILL.md"
     }
   ],
   "docs": [

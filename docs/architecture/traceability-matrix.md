@@ -8,6 +8,7 @@ This matrix links each capability to the concrete artifacts required to consider
 |Design System Baseline|@design-system-architect|design-system-generator, figma-integration|specs/design-system-spec.md|templates/agent-workflow.md|examples/design-tokens-baseline.md|Covered|
 |Functional to UX Spec|@ux-ui-expert|functional-to-ux-spec, devops-connector|specs/functional-to-ux-spec-spec.md|templates/spec-from-functional.md|examples/complete-audit-flow.md|Covered|
 |Component Governance|@component-inventory-mapper|component-inventory, storybook-component-documentation|specs/design-system-spec.md|templates/component-story.md|examples/design-tokens-baseline.md|Covered|
+|Visual Exploration (Optional)|@ux-ui-expert|hallmark, design-system-generator, ux-audit|specs/hallmark-bridge-spec.md|templates/hallmark-handoff.md|examples/hallmark-to-ux-flow.md|Covered|
 
 ## Rules
 

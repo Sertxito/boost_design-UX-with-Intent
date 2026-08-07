@@ -35,9 +35,20 @@
     "skills/ux-audit/SKILL.md",
     "skills/vue-component-styling/SKILL.md"
   ],
+  "optionalSkillSet": [
+    "skills/hallmark/SKILL.md"
+  ],
   "cliCapabilities": {
     "init": "mcpee-uxdesign-init",
     "doctor": "mcpee-uxdesign-doctor"
+  },
+  "integrations": {
+    "hallmark": {
+      "enabled": true,
+      "mode": "optional-complement",
+      "externalInstall": "npx skills add nutlope/hallmark",
+      "bridgeSkill": "skills/hallmark/SKILL.md"
+    }
   },
   "notes": [
     "This file is intentionally lightweight and references existing artifact families.",
