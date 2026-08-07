@@ -1,0 +1,154 @@
+{
+  "name": "BoostDesign UX with Intent",
+  "tagline": "UX/UI platform for design systems, accessibility, and component governance with GitHub Copilot",
+  "version": "1.0.0",
+  "agents": [
+    {
+      "id": "ux-ui-expert",
+      "name": "UX UI Expert",
+      "description": "Main UX/UI orchestrator for audits, strategy, and execution",
+      "file": "agents/ux-ui-expert.agent.md",
+      "useCases": [
+        "Run a full UX/UI audit",
+        "Generate an actionable UX roadmap",
+        "Review accessibility and consistency gaps"
+      ]
+    },
+    {
+      "id": "design-system-architect",
+      "name": "Design System Architect",
+      "description": "Creates and evolves tokens, themes, and component standards",
+      "file": "agents/design-system-architect.agent.md",
+      "useCases": [
+        "Create a design token baseline",
+        "Define typography and spacing scales",
+        "Standardize visual language across products"
+      ]
+    },
+    {
+      "id": "figma-design-auditor",
+      "name": "Figma Design Auditor",
+      "description": "Extracts and validates UX/UI artifacts from Figma",
+      "file": "agents/figma-design-auditor.agent.md",
+      "useCases": [
+        "Sync design tokens from Figma",
+        "Audit Figma components against standards",
+        "Detect drift between Figma and implementation"
+      ]
+    },
+    {
+      "id": "component-inventory-mapper",
+      "name": "Component Inventory Mapper",
+      "description": "Maps components, detects duplicates, and suggests consolidation",
+      "file": "agents/component-inventory-mapper.agent.md",
+      "useCases": [
+        "Catalog all UI components",
+        "Find duplicate variants",
+        "Plan consolidation priorities"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "aria-accessibility-patterns",
+      "name": "ARIA Accessibility Patterns",
+      "description": "WCAG and ARIA keyboard and semantic patterns",
+      "path": "skills/aria-accessibility-patterns/SKILL.md"
+    },
+    {
+      "id": "component-inventory",
+      "name": "Component Inventory",
+      "description": "Component cataloging, consistency checks, and overlap detection",
+      "path": "skills/component-inventory/SKILL.md"
+    },
+    {
+      "id": "css-scss-best-practices",
+      "name": "CSS SCSS Best Practices",
+      "description": "Reusable styling architecture and implementation guidelines",
+      "path": "skills/css-scss-best-practices/SKILL.md"
+    },
+    {
+      "id": "design-patterns-library",
+      "name": "Design Patterns Library",
+      "description": "Curated UX/UI patterns for common flows and interfaces",
+      "path": "skills/design-patterns-library/SKILL.md"
+    },
+    {
+      "id": "design-system-generator",
+      "name": "Design System Generator",
+      "description": "Generates token systems, palettes, and foundational artifacts",
+      "path": "skills/design-system-generator/SKILL.md"
+    },
+    {
+      "id": "devops-connector",
+      "name": "DevOps Connector",
+      "description": "Connects backlog systems to UX specification workflows",
+      "path": "skills/devops-connector/SKILL.md"
+    },
+    {
+      "id": "figma-integration",
+      "name": "Figma Integration",
+      "description": "Design extraction and sync guidance from Figma",
+      "path": "skills/figma-integration/SKILL.md"
+    },
+    {
+      "id": "functional-to-ux-spec",
+      "name": "Functional to UX Spec",
+      "description": "Converts functional requirements into UX/UI specs",
+      "path": "skills/functional-to-ux-spec/SKILL.md"
+    },
+    {
+      "id": "react-component-styling",
+      "name": "React Component Styling",
+      "description": "React styling patterns with CSS Modules, styled-components, Emotion, and Tailwind",
+      "path": "skills/react-component-styling/SKILL.md"
+    },
+    {
+      "id": "screenshot-reporter",
+      "name": "Screenshot Reporter",
+      "description": "Visual QA and reporting workflow from screenshots",
+      "path": "skills/screenshot-reporter/SKILL.md"
+    },
+    {
+      "id": "storybook-component-documentation",
+      "name": "Storybook Component Documentation",
+      "description": "Storybook documentation standards for UI components",
+      "path": "skills/storybook-component-documentation/SKILL.md"
+    },
+    {
+      "id": "ux-audit",
+      "name": "UX Audit",
+      "description": "End-to-end UX and accessibility assessment methodology",
+      "path": "skills/ux-audit/SKILL.md"
+    },
+    {
+      "id": "vue-component-styling",
+      "name": "Vue Component Styling",
+      "description": "Vue styling patterns with scoped CSS, CSS Modules, and Tailwind",
+      "path": "skills/vue-component-styling/SKILL.md"
+    }
+  ],
+  "docs": [
+    {
+      "name": "Workflows",
+      "file": "docs/Workflows.md"
+    },
+    {
+      "name": "References",
+      "file": "docs/References.md"
+    },
+    {
+      "name": "Accessibility",
+      "file": "docs/design-tokens/accessibility.md"
+    }
+  ],
+  "quickStart": {
+    "step1": "Install package: npm install mcpee-uxdesign",
+    "step2": "Open VS Code in your project",
+    "step3": "Initialize artifacts: npx mcpee-uxdesign-init",
+    "step4": "Validate setup: npx mcpee-uxdesign-doctor",
+    "step5": "Open Copilot Chat and call @ux-ui-expert",
+    "step6": "Run a first audit and create your design-token baseline"
+  }
+}
+

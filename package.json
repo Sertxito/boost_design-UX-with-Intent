@@ -1,0 +1,85 @@
+{
+  "name": "mcpee-uxdesign",
+  "version": "0.1.0",
+  "description": "BoostDesign UX/UI pack for GitHub Copilot with agents, instructions, skills, and design-token references.",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "mcpee-uxdesign-init": "scripts/init.mjs",
+    "mcpee-uxdesign-doctor": "scripts/doctor.mjs"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./mcpee": "./mcpee.json"
+  },
+  "files": [
+    "mcpee.json",
+    "platform.json",
+    ".github/copilot-instructions.md",
+    "agents",
+    "docs",
+    "instructions",
+    "prompts",
+    "skills",
+    "specs",
+    "references",
+    "examples",
+    "templates",
+    "scripts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "init": "node scripts/init.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "validate:json": "node -e \"const fs=require('fs'); JSON.parse(fs.readFileSync('mcpee.json','utf8')); JSON.parse(fs.readFileSync('platform.json','utf8')); console.log('JSON metadata OK');\"",
+    "quality": "npm run validate:json",
+    "release": "semantic-release",
+    "release:dry": "semantic-release --dry-run"
+  },
+  "keywords": [
+    "mcpee",
+    "ux",
+    "ui",
+    "design-system",
+    "design-tokens",
+    "copilot",
+    "agents",
+    "skills",
+    "specs"
+  ],
+  "author": "Sergio Hierro Cinos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sertxito/boost_design-UX-with-Intent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sertxito/boost_design-UX-with-Intent/issues"
+  },
+  "homepage": "https://github.com/Sertxito/boost_design-UX-with-Intent#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@mcpee/core": "^0.1.0"
+  },
+  "peerDependenciesMeta": {
+    "@mcpee/core": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^10.3.5",
+    "@semantic-release/npm": "^11.0.3",
+    "@semantic-release/release-notes-generator": "^12.1.0",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
+    "semantic-release": "^24.2.7"
+  }
+}

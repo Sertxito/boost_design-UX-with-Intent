@@ -1,60 +1,93 @@
 # BoostDesign - Kit Experto de UX/UI para GitHub Copilot
 
+[![npm version](https://img.shields.io/npm/v/mcpee-uxdesign.svg)](https://www.npmjs.com/package/mcpee-uxdesign)
+
 **BoostDesign** es un sistema profesional de UX/UI que amplifica GitHub Copilot con **4 agentes**, **3 instrucciones contextuales** y **13 skills especializados**.
 
 Todo respaldado por estándares **W3C**, **WCAG**, **Material Design 3** y mejores prácticas de la industria.
 
-## 🚀 Instalación (2 minutos)
+## 🚀 Instalacion npm (2 minutos)
 
-### Pasos
+### Opcion recomendada
 
-1. **Copia la carpeta**:
+1. **Instala el paquete**:
+
    ```bash
-   cp -r boostdesign /path/to/your/project
-   cd /path/to/your/project
-   code .
+   npm install mcpee-uxdesign
    ```
 
-2. **Abre el chat**: Ctrl+Shift+I (o Cmd+Shift+I)
+2. **Inicializa los artefactos en tu repo**:
 
-3. **Verifica**: Escribe `@` en el chat → Deberías ver los 4 agentes
+   ```bash
+   npx mcpee-uxdesign-init
+   ```
 
-4. **Empieza**: `@ux-ui-expert audita mi proyecto`
+   Si quieres sobrescribir archivos existentes:
+
+   ```bash
+   npx mcpee-uxdesign-init --force
+   ```
+
+3. **Abre VS Code** en tu proyecto.
+
+4. **Valida instalacion** (opcional pero recomendado):
+
+   ```bash
+   npx mcpee-uxdesign-doctor
+   ```
+
+5. **Abre el chat**: Ctrl+Shift+I (o Cmd+Shift+I).
+
+6. **Verifica**: Escribe `@` en el chat, deben aparecer los 4 agentes.
+
+7. **Empieza**: `@ux-ui-expert audita mi proyecto`.
+
+### Instalacion para contribuir a este paquete
+
+```bash
+npm install
+npm run quality
+npm run doctor
+```
 
 ### Solución Rápida de Problemas
 
-| Problema | Solución |
-|----------|----------|
-| Agentes no aparecen | Ctrl+Shift+P → Reload Window |
-| Instrucciones no aplican | Verifica el YAML frontmatter |
-| Skills no funcionan | Revisa `.github/skills/[nombre]/SKILL.md` |
+|Problema|Solución|
+|---|---|
+|Agentes no aparecen|Ctrl+Shift+P → Reload Window|
+|Instrucciones no aplican|Verifica el YAML frontmatter|
+|Skills no funcionan|Revisa `skills/[nombre]/SKILL.md`|
 
 ---
 
 ## 📚 Documentación
 
-| Documento | Propósito |
-|-----------|-----------|
-| **[docs/Workflows.md](docs/Workflows.md)** | Tareas rápidas (auditoría, design system, etc.) |
-| **[docs/References.md](docs/References.md)** | Enlaces a estándares W3C y documentación oficial |
+|Documento|Propósito|
+|---|---|
+|**[docs/Workflows.md](docs/Workflows.md)**|Tareas rápidas (auditoría, design system, etc.)|
+|**[docs/References.md](docs/References.md)**|Enlaces a estándares W3C y documentación oficial|
 
 ---
 
 ## 🎯 Los 4 Agentes
 
 ### @ux-ui-expert
+
 **Orquestador maestro** - Tu punto de entrada  
 Audita proyectos, crea estrategias, mapea componentes.
 
 ### @design-system-architect
+
 **Arquitecto de Design System**  
 Crea tokens, paletas, escalas tipográficas, temas.
 
 ### @figma-design-auditor
+
 **Especialista en integración Figma**  
 Extrae design tokens, mapea componentes, sincroniza.
 
 ### @component-inventory-mapper
+
 **Analizador de componentes**  
 Cataloga, encuentra duplicados, recomienda consolidación.
 
@@ -175,28 +208,3 @@ Todas las recomendaciones respaldadas por:
 - ✅ Documentación Oficial
 - ✅ Mejores Prácticas de la Industria
 - ✅ Enfoque Accesibilidad-Primero
-- **3 Instructions** - Contextuales automáticas
-- **11 Skills** - Guías especializadas
-- **50+ Templates** - Ejemplos ejecutables
-- **15+ Official References** - W3C, Material Design, etc.
-- **6 Frameworks** - React, Vue, Angular, CSS, SCSS, Tailwind
-
-## 🎓 Cómo Aprender
-
-1. **Lee README de cada skill** - Empieza con conceptos
-2. **Copia templates** - Adapta a tu proyecto
-3. **Invocar @agent** - Pregunta dudas específicas
-4. **Valida con herramientas** - WCAG, Lighthouse, etc.
-
-## 🚀 Próximos Pasos
-
-1. **Copiar a tu proyecto** (o abrir en VS Code)
-2. **Invocar `@ux-ui-expert`** para análisis
-3. **Seguir checklist onboarding**
-4. **Crear design tokens** como base
-5. **Documentar componentes** con Storybook
-6. **Validar accesibilidad** con WCAG/ARIA
-
----
-
-**Made with ♿ Accessibility First, 📚 References, and 🎨 UX/UI Expertise**
