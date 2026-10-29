@@ -1,3 +1,7 @@
+---
+description: 'Run a full UX/UI assessment and return prioritized, actionable findings.'
+---
+
 # Prompt: UX Audit 360
 
 ## Objective

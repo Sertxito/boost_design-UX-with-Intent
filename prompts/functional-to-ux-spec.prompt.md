@@ -1,3 +1,7 @@
+---
+description: 'Translate functional requirements into complete UX/UI specs.'
+---
+
 # Prompt: Functional Requirement to UX Spec
 
 ## Objective

@@ -89,9 +89,9 @@ function run() {
   let pkg;
   try {
     platform = readJson("platform.json");
-    mcpee = readJson("mcpee.json");
+    mcpee = readJson("boost.json");
     pkg = readJson("package.json");
-    addCheck("JSON manifests", true, "platform.json, mcpee.json and package.json are valid JSON.");
+    addCheck("JSON manifests", true, "platform.json, boost.json and package.json are valid JSON.");
   } catch (error) {
     addCheck("JSON manifests", false, `Invalid JSON: ${error.message}`);
   }
@@ -161,7 +161,7 @@ function run() {
       "Hallmark integration",
       !hallmarkEnabled || missingHallmark.length === 0,
       !hallmarkEnabled
-        ? "Hallmark integration disabled in mcpee.json."
+        ? "Hallmark integration disabled in boost.json."
         : missingHallmark.length === 0
         ? "Hallmark integration artifacts are present."
         : `Missing Hallmark artifacts: ${missingHallmark.join(", ")}`
@@ -177,7 +177,7 @@ function run() {
       "Hallmark auto-install wiring",
       !hallmarkEnabled || hasAutoInstallWiring,
       !hallmarkEnabled
-        ? "Hallmark integration disabled in mcpee.json."
+        ? "Hallmark integration disabled in boost.json."
         : hasAutoInstallWiring
         ? "postinstall + install scripts for Hallmark are configured."
         : "Missing Hallmark postinstall wiring in package.json/scripts."
@@ -259,7 +259,7 @@ function run() {
   const score = Math.round((passed / Math.max(total, 1)) * 100);
   const failedChecks = checks.filter((c) => !c.ok);
 
-  console.log("mcpee-uxdesign doctor");
+  console.log("boost-uxdesign doctor");
   console.log(`Target: ${target}`);
   console.log("");
   for (const check of checks) {
@@ -278,8 +278,8 @@ function run() {
   console.log("Status: Incomplete setup");
   console.log(`Failed checks: ${failedChecks.length}`);
   console.log("Fix baseline setup with:");
-  console.log("- npx mcpee-uxdesign-init");
-  console.log("- npx mcpee-uxdesign-doctor");
+  console.log("- npx boost-uxdesign-init");
+  console.log("- npx boost-uxdesign-doctor");
   process.exit(1);
 }
 

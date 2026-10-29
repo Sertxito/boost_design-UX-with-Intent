@@ -18,7 +18,7 @@ Use this checklist before publishing a new version.
 
 - [ ] `docs/Workflows.md` paths are valid.
 - [ ] README commands match package scripts.
-- [ ] `mcpee.json` and `platform.json` stay aligned with repository artifacts.
+- [ ] `boost.json` and `platform.json` stay aligned with repository artifacts.
 
 ## Validation Evidence
 

@@ -1,19 +1,19 @@
 {
-  "name": "mcpee-uxdesign",
+  "name": "boost-uxdesign",
   "version": "0.1.0",
   "description": "BoostDesign UX/UI pack for GitHub Copilot with agents, instructions, skills, and design-token references.",
   "type": "module",
-  "main": "index.js",
   "bin": {
-    "mcpee-uxdesign-init": "scripts/init.mjs",
-    "mcpee-uxdesign-doctor": "scripts/doctor.mjs"
+    "boost-uxdesign": "scripts/install.mjs",
+    "boost-uxdesign-scaffold": "scripts/init.mjs",
+    "boost-uxdesign-doctor": "scripts/doctor.mjs"
   },
   "exports": {
-    ".": "./index.js",
-    "./mcpee": "./mcpee.json"
+    "./boost.json": "./boost.json",
+    "./package.json": "./package.json"
   },
   "files": [
-    "mcpee.json",
+    "boost.json",
     "platform.json",
     ".github/copilot-instructions.md",
     "agents",
@@ -36,13 +36,14 @@
     "doctor": "node scripts/doctor.mjs",
     "measure:coverage": "node scripts/measure-coverage.mjs",
     "coverage:gate": "node scripts/measure-coverage.mjs --min 100",
-    "validate:json": "node -e \"const fs=require('fs'); JSON.parse(fs.readFileSync('mcpee.json','utf8')); JSON.parse(fs.readFileSync('platform.json','utf8')); console.log('JSON metadata OK');\"",
+    "validate:json": "node -e \"const fs=require('fs'); JSON.parse(fs.readFileSync('boost.json','utf8')); JSON.parse(fs.readFileSync('platform.json','utf8')); console.log('JSON metadata OK');\"",
     "quality": "npm run validate:json",
     "release": "semantic-release",
-    "release:dry": "semantic-release --dry-run"
+    "release:dry": "semantic-release --dry-run",
+    "boost:install": "node scripts/install.mjs",
+    "boost:check": "node scripts/install.mjs --check"
   },
   "keywords": [
-    "mcpee",
     "ux",
     "ui",
     "design-system",
@@ -50,7 +51,9 @@
     "copilot",
     "agents",
     "skills",
-    "specs"
+    "specs",
+    "github-copilot",
+    "agent-skills"
   ],
   "author": "Sergio Hierro Cinos",
   "repository": {
@@ -67,14 +70,6 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "peerDependencies": {
-    "@mcpee/core": "^0.1.0"
-  },
-  "peerDependenciesMeta": {
-    "@mcpee/core": {
-      "optional": true
-    }
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",

@@ -1,3 +1,7 @@
+---
+description: 'Create a robust initial design-system baseline with accessibility constraints.'
+---
+
 # Prompt: Design System Baseline
 
 ## Objective

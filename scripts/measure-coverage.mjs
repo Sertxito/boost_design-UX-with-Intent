@@ -86,7 +86,7 @@ const report = {
 const reportPath = abs("evals/coverage-report.json");
 fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
-console.log("mcpee-uxdesign coverage report");
+console.log("boost-uxdesign coverage report");
 console.log(`Target: ${target}`);
 for (const check of metricChecks) {
   const mark = check.ok ? "[pass]" : "[fail]";
