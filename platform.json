@@ -149,10 +149,10 @@
     }
   ],
   "quickStart": {
-    "step1": "Install package: npm install mcpee-uxdesign",
+    "step1": "Install package: npm install boost-uxdesign",
     "step2": "Open VS Code in your project",
-    "step3": "Initialize artifacts: npx mcpee-uxdesign-init",
-    "step4": "Validate setup: npx mcpee-uxdesign-doctor",
+    "step3": "Initialize artifacts: npx boost-uxdesign-init",
+    "step4": "Validate setup: npx boost-uxdesign-doctor",
     "step5": "Open Copilot Chat and call @ux-ui-expert",
     "step6": "Run a first audit and create your design-token baseline"
   }

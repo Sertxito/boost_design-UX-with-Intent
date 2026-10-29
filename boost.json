@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "name": "mcpee-uxdesign",
+  "name": "boost-uxdesign",
   "version": "0.1.0",
   "type": "boost",
   "domain": "ux-ui",
@@ -39,8 +39,8 @@
     "skills/hallmark/SKILL.md"
   ],
   "cliCapabilities": {
-    "init": "mcpee-uxdesign-init",
-    "doctor": "mcpee-uxdesign-doctor"
+    "init": "boost-uxdesign-init",
+    "doctor": "boost-uxdesign-doctor"
   },
   "integrations": {
     "hallmark": {

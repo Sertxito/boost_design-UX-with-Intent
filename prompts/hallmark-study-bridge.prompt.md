@@ -1,3 +1,7 @@
+---
+description: 'Extract visual DNA from a reference and convert it into governed UX artifacts.'
+---
+
 # Prompt: Hallmark Study Bridge
 
 ## Objective

@@ -1,56 +1,38 @@
 # BoostDesign - Kit Experto de UX/UI para GitHub Copilot
 
-[![npm version](https://img.shields.io/npm/v/mcpee-uxdesign.svg)](https://www.npmjs.com/package/mcpee-uxdesign)
+[![npm version](https://img.shields.io/npm/v/boost-uxdesign.svg)](https://www.npmjs.com/package/boost-uxdesign)
 
 **BoostDesign** es un sistema profesional de UX/UI que amplifica GitHub Copilot con **4 agentes**, **3 instrucciones contextuales**, **13 skills core** y **1 complemento opcional de exploración visual (Hallmark Bridge)**.
 
 Todo respaldado por estándares **W3C**, **WCAG**, **Material Design 3** y mejores prácticas de la industria.
 
-## 🚀 Instalacion npm (2 minutos)
+## Instalacion
 
-### Opcion recomendada
+Este boost es **autocontenido**: no necesita runtime, plugin ni servidor MCP. Un solo comando copia sus activos a las rutas donde GitHub Copilot / VS Code los descubren automaticamente.
 
-1. **Instala el paquete**:
+```bash
+# Desde la raiz de TU proyecto
+npx github:Sertxito/boost_design-UX-with-Intent
+# o, una vez publicado en npm
+npx boost-uxdesign
+```
 
-   ```bash
-   npm install mcpee-uxdesign
-   ```
+| Activo | Se instala en |
+|---|---|
+| Agentes | `.github/agents/*.agent.md` |
+| Skills | `.github/skills/<nombre>/SKILL.md` y `.agents/skills/<nombre>/SKILL.md` |
+| Prompts | `.github/prompts/*.prompt.md` |
+| Instrucciones | `.github/instructions/*.instructions.md` |
+| Instrucciones globales | `.github/copilot-instructions.md` (solo si el proyecto no tiene) |
 
-   Esto intenta instalar automáticamente el complemento Hallmark.
+Opciones: `--target <dir>`, `--force` (sobrescribir), `--dry-run`, `--no-agents-dir` (omite `.agents/skills`), `--check` (verifica la instalacion), `--uninstall`.
+Nunca se sobrescriben archivos existentes sin `--force`, asi que varios boosts conviven en el mismo proyecto.
 
-2. **Inicializa los artefactos en tu repo**:
+**Verifica:** ejecuta `npx boost-uxdesign --check`, recarga VS Code (`Developer: Reload Window`) y escribe `@` en Copilot Chat (agentes), `/` (prompts) y abre el selector de skills.
 
-   ```bash
-   npx mcpee-uxdesign-init
-   ```
+Extras: `npx boost-uxdesign-doctor` valida la instalacion y el complemento opcional Hallmark (para omitir su instalacion automatica define `BOOST_SKIP_HALLMARK=1`).
 
-   Si quieres sobrescribir archivos existentes:
-
-   ```bash
-   npx mcpee-uxdesign-init --force
-   ```
-
-   Si quieres evitar instalación automática de Hallmark durante init:
-
-   ```bash
-   npx mcpee-uxdesign-init --no-hallmark
-   ```
-
-3. **Abre VS Code** en tu proyecto.
-
-4. **Valida instalacion** (opcional pero recomendado):
-
-   ```bash
-   npx mcpee-uxdesign-doctor
-   ```
-
-5. **Abre el chat**: Ctrl+Shift+I (o Cmd+Shift+I).
-
-6. **Verifica**: Escribe `@` en el chat, deben aparecer los 4 agentes.
-
-7. **Empieza**: `@ux-ui-expert audita mi proyecto`.
-
-### Instalacion para contribuir a este paquete
+### Para contribuir
 
 ```bash
 npm install
@@ -60,13 +42,13 @@ npm run measure:coverage
 npm run coverage:gate
 ```
 
-### Solución Rápida de Problemas
+### Solucion rapida de problemas
 
-|Problema|Solución|
+|Problema|Solucion|
 |---|---|
 |Agentes no aparecen|Ctrl+Shift+P → Reload Window|
 |Instrucciones no aplican|Verifica el YAML frontmatter|
-|Skills no funcionan|Revisa `skills/[nombre]/SKILL.md`|
+|Skills no funcionan|Revisa `.github/skills/[nombre]/SKILL.md`|
 
 ---
 
@@ -141,9 +123,9 @@ Se aplican **automáticamente** mientras programas:
 ## 🧩 Complemento Opcional
 
 - `hallmark` (bridge) - Integra generación/rediseño visual de Hallmark con validación UX de BoostDesign.
-- Instalación automática al instalar este paquete (postinstall) y durante `mcpee-uxdesign-init`.
+- Instalación automática al instalar este paquete (postinstall) y durante `boost-uxdesign-init`.
 - Instalación manual del motor Hallmark: `npx skills add nutlope/hallmark`
-- Para omitir instalación automática global: define `MCPEE_SKIP_HALLMARK=1`.
+- Para omitir instalación automática global: define `BOOST_SKIP_HALLMARK=1`.
 - Recomendado para: exploración visual de hero/landing antes de normalizar tokens y validar accesibilidad.
 
 ---
@@ -226,3 +208,12 @@ Todas las recomendaciones respaldadas por:
 - ✅ Documentación Oficial
 - ✅ Mejores Prácticas de la Industria
 - ✅ Enfoque Accesibilidad-Primero
+
+## Naming and collisions
+
+Installed assets are prefixed with `uxdesign-` (e.g. `.github/agents/uxdesign-<name>.agent.md`, `.github/skills/uxdesign-<name>/`) so several boosts can live in the same project, and internal references are rewritten to match.
+
+- Nothing that already exists in the target is overwritten: each ignored file is reported with a `[WARN] ... already existed ... IGNORED` message. Use `--force` to overwrite.
+- An existing `.github/copilot-instructions.md` is kept; the boost's global guidance is installed as `uxdesign-global.instructions.md` instead.
+- Re-running the installer is safe; `--check` and `--uninstall` work from the manifest.
+

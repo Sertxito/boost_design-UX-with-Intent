@@ -1,3 +1,7 @@
+---
+description: 'Redesign an existing UI direction and pass it through BoostDesign governance.'
+---
+
 # Prompt: Hallmark Redesign Bridge
 
 ## Objective

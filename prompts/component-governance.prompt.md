@@ -1,3 +1,7 @@
+---
+description: 'Audit component library coherence and define consolidation actions.'
+---
+
 # Prompt: Component Governance
 
 ## Objective

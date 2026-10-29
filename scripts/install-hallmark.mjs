@@ -17,9 +17,9 @@ export function installHallmark(options = {}) {
   const silent = Boolean(options.silent);
   const source = options.source || "runtime";
 
-  if (process.env.MCPEE_SKIP_HALLMARK === "1") {
+  if (process.env.BOOST_SKIP_HALLMARK === "1") {
     if (!silent) {
-      console.log("[skip] Hallmark installation skipped (MCPEE_SKIP_HALLMARK=1)");
+      console.log("[skip] Hallmark installation skipped (BOOST_SKIP_HALLMARK=1)");
     }
     return { ok: true, skipped: true };
   }
